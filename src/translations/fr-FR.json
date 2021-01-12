@@ -1,0 +1,19 @@
+{
+  "APP_NAME": "DYNAMIC-FORM",
+  "About": "A propos",
+  "Hello world !": "Bonjour le monde !",
+  "Home": "Accueil",
+  "Logged in as": "Connecté en tant que",
+  "Login": "Connexion",
+  "Logout": "Déconnexion",
+  "Password": "Mot de passe",
+  "Email": "Email",
+  "Username": "Nom",
+  "Password is required": "Mot de passe requis",
+  "Username is required": "Nom requis",
+  "Username or password incorrect.": "Identifiant ou mot de passe incorrect.",
+  "Email is required": "Email requis",
+  "Remember me": "Rester connecté",
+  "Sign Up": "Valider",
+  "Version": "Version"
+}

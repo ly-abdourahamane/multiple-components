@@ -1,0 +1,67 @@
+<div fxFill fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1.5rem" class="mat-typography">
+  <div>
+    <h1 fxLayoutAlign="center" translate>APP_NAME</h1>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2rem">
+      <h4 class="version">v{{ version }}</h4>
+      <app-language-selector></app-language-selector>
+    </div>
+  </div>
+  <div class="login-container" fxLayout="row" fxLayoutAlign="center">
+    <mat-card fxFlex="90%" fxFlex.sm="66%" fxFlex.md="50%" fxFlex.gt-md="33%" class="login-box">
+      <form (ngSubmit)="signUp()" [formGroup]="signupForm" novalidate>
+        <div class="login-error" [hidden]="!error || isLoading" translate>
+          Username or password incorrect.
+        </div>
+        <br />
+        <div class="login-fields" fxLayout="column">
+          <mat-form-field [hideRequiredMarker]="true">
+            <input
+              type="text"
+              matInput
+              formControlName="name"
+              autocomplete="name"
+              [placeholder]="'Username' | translate"
+              required
+            />
+            <mat-error *ngIf="signupForm.controls.name.invalid && signupForm.controls.name.touched">
+              <span translate>Username is required</span>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field [hideRequiredMarker]="true">
+            <input
+              type="text"
+              matInput
+              formControlName="email"
+              autocomplete="email"
+              [placeholder]="'Email' | translate"
+              required
+            />
+            <mat-error *ngIf="signupForm.controls.email.invalid && signupForm.controls.email.touched">
+              <span translate>Email is required</span>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field [hideRequiredMarker]="true">
+            <input
+              type="password"
+              matInput
+              formControlName="password"
+              autocomplete="current-password"
+              [placeholder]="'Password' | translate"
+              required
+            />
+            <mat-error *ngIf="signupForm.controls.password.invalid && signupForm.controls.password.touched">
+              <span translate>Password is required</span>
+            </mat-error>
+          </mat-form-field>
+          <br />
+          <button mat-raised-button color="primary" type="submit" [disabled]="signupForm.invalid || isLoading">
+            <app-loader class="inline-loader" [isLoading]="isLoading"></app-loader>
+            <span translate>Sign Up</span>
+          </button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>
